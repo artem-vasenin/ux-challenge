@@ -1,0 +1,78 @@
+@import "variables";
+
+// Question card styles
+.content {
+  font-weight: 400;
+  font-family: Lato, sans-serif;
+}
+
+// Question extra info styles
+.questionInfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  @media all and (min-width: 400px){
+    flex-direction: row;
+  }
+
+  &__user {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    position: relative;
+
+    &::after,
+    &::before {
+      @media all and (max-width: 400px){
+        display: none;
+      }
+
+      content: '';
+      display: block;
+      position: absolute;
+      width: 1px;
+      height: 16px;
+      background-color: $question-info-user-bg-pseudo;
+      top: 8px;
+    }
+
+    &::before {
+      left: 0;
+    }
+
+    &::after {
+      right: 0;
+    }
+  }
+
+  &__time {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+}
+
+.tag {
+  background-color: $question-tag-bg-color!important;
+}
+
+// Replies block styles
+.repliesActions {
+   display: flex;
+   flex-direction: row;
+   align-items: center;
+   justify-content: space-between;
+ }
+
+.repliesBlock {
+  background-color: $question-replies-block-bg-color;
+}
+
+.repliesList {
+
+}
+
+.formBlock {
+  background-color: $question-form-block-bg-color;
+}
